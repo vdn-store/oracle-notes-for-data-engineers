@@ -8,7 +8,18 @@ Notice that the V$SQLAREA only shows the first 1000 bytes of any SQL. If the SQL
   
 ## Elapsed time
 elapsed time = cpu time + user i/o wait time + application_wait_time + concurrency_wait_time + cluster_wait_time + plsql_exec_time + java_exec_time 
-  
+
+## Buffer get
+Oracle storage is arranged into blocks of a given size (e.g. 8k). Tables and indexes are made up of a series of blocks on the disk. When these blocks are in memory they occupy a buffer.  
+
+When Oracle requires a block it does a buffer get. First it checks to see if it already has the block it needs in memory. If so, the in-memory version is used. If it does not have the block in memory then it will read it from disk into memory.  
+
+So a buffer get represents the number of times Oracle had to access a block. The reads could have been satisfied either from memory (the buffers) or have resulted in a physical IO.  
+
+Since physical IO is so expensive (compared to memory or CPU) one approach to tuning is to concentrate on reduction in buffer gets which is assumed will flow on to reduce physical IO.
+
+
 ## Resources:
 * http://www.dba-oracle.com/t_sql_response_time.htm
 * http://www.dba-oracle.com/m_sql_execute_elapsed_time.htm
+* http://www.dba-oracle.com/m_buffer_gets.htm
