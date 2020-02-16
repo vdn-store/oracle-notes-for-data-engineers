@@ -37,3 +37,4 @@ Since physical IO is so expensive (compared to memory or CPU) one approach to tu
 * http://www.dba-oracle.com/m_buffer_gets.htm
 * http://db.geeksinsight.com/2013/06/20/sql_id-missing-in-dba_hist_sqlstat-why-2/
 * http://www.dba-oracle.com/oracle10g_tuning/t_dba_hist_sqlstat.htm
+* http://db.geeksinsight.com/2013/06/20/sql_id-missing-in-dba_hist_sqlstat-why-2/
