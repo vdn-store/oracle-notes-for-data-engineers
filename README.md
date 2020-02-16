@@ -18,8 +18,22 @@ So a buffer get represents the number of times Oracle had to access a block. The
 
 Since physical IO is so expensive (compared to memory or CPU) one approach to tuning is to concentrate on reduction in buffer gets which is assumed will flow on to reduce physical IO.
 
+## dba_hist_sqlstat 
+ * High number of buffer gets.
+* Large execution count.
+* High number of physical reads.
+* High shared memory usage.
+* High version count.
+* High parse count.
+* High elapsed time.
+* High execution CPU time.
+* High number of rows processed.
+* High number of sorts, etc
+
 
 ## Resources:
 * http://www.dba-oracle.com/t_sql_response_time.htm
 * http://www.dba-oracle.com/m_sql_execute_elapsed_time.htm
 * http://www.dba-oracle.com/m_buffer_gets.htm
+* http://db.geeksinsight.com/2013/06/20/sql_id-missing-in-dba_hist_sqlstat-why-2/
+* http://www.dba-oracle.com/oracle10g_tuning/t_dba_hist_sqlstat.htm
