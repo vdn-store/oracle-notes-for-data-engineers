@@ -1,5 +1,5 @@
 # oracle-notes-for-data-engineers
-
+Good to start with https://blog.pythian.com/mining-the-awr-to-identify-performance-trends/
 
 ## Monitoring
 **V$SQLAREA**: The V$SQLAREA view provides information about the SQL that is being currently executed or has been executed for the database. The V$SQLAREA view shows all SQL, even if it has been embedded into PL/SQL code or is sent to the database via an external program.  
