@@ -33,23 +33,11 @@ Since physical IO is so expensive (compared to memory or CPU) one approach to tu
 # Basic queries
 * Check the column name and its datatype:
 ```sql
-etlpc_process_group	VARCHAR2(120)
-etlpc_wf_process_name	VARCHAR2(120)
-etlpc_business_name	VARCHAR2(120)
-etlproc_effective_date_char	VARCHAR2(40)
-etlproc_effective_date	DATE(7)
-etlproc_result	VARCHAR2(96)
-etlproc_start_datetime	VARCHAR2(64)
-etlproc_end_datetime	DATE(7)
-duration_hours_num	NUMBER(22)
-duration_hours	VARCHAR2(172)
-avg_duration_hours_num	NUMBER(22)
-etlpc_business_deadline	DATE(8)
-etlpc_business_deadline_char	VARCHAR2(64)
-avg_duration_hours	VARCHAR2(172)
-etlpc_day_window	VARCHAR2(620)
-etlpc_time_window	VARCHAR2(4000)
-etlpc_process_desc	VARCHAR2(480)
+select lower(column_name),  data_type || '(' || data_length || ')' as datatype
+from all_tab_columns 
+where TABLE_NAME = upper('table_name')
+and owner = upper('schema_name')
+;
 ```
 
 ## Resources:
